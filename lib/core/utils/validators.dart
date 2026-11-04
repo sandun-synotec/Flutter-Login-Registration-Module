@@ -7,14 +7,9 @@ class Validators {
     r'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$',
   );
 
-  static final RegExp _phoneRegExp = RegExp(
-    r'^\+?[0-9]{9,15}$',
-  );
+  static final RegExp _phoneRegExp = RegExp(r'^\+?[0-9]{9,15}$');
 
-  static final RegExp _nameRegExp = RegExp(
-    r"^[\p{L}\s.'-]+$",
-    unicode: true,
-  );
+  static final RegExp _nameRegExp = RegExp(r"^[\p{L}\s.'-]+$", unicode: true);
 
   /// Validates an input that can be either an email address or a mobile phone number.
   static String? validateIdentifier(String? value) {
@@ -74,8 +69,10 @@ class Validators {
 
   /// Individual password requirement checkers.
   static bool hasMinLength(String password) => password.length >= 8;
-  static bool hasUppercase(String password) => RegExp(r'[A-Z]').hasMatch(password);
-  static bool hasLowercase(String password) => RegExp(r'[a-z]').hasMatch(password);
+  static bool hasUppercase(String password) =>
+      RegExp(r'[A-Z]').hasMatch(password);
+  static bool hasLowercase(String password) =>
+      RegExp(r'[a-z]').hasMatch(password);
   static bool hasNumber(String password) => RegExp(r'[0-9]').hasMatch(password);
   static bool hasSpecial(String password) =>
       RegExp(r'[!@#$%^&*(),.?":{}|<>_\-\\\/]').hasMatch(password);
@@ -98,7 +95,10 @@ class Validators {
   }
 
   /// Validates that confirm password matches original password.
-  static String? validateConfirmPassword(String? password, String? confirmPassword) {
+  static String? validateConfirmPassword(
+    String? password,
+    String? confirmPassword,
+  ) {
     if (confirmPassword == null || confirmPassword.isEmpty) {
       return AppStrings.requiredField;
     }

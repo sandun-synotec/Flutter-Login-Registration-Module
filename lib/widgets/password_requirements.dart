@@ -6,10 +6,7 @@ import '../core/utils/validators.dart';
 class PasswordRequirements extends StatelessWidget {
   final String password;
 
-  const PasswordRequirements({
-    super.key,
-    required this.password,
-  });
+  const PasswordRequirements({super.key, required this.password});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +53,9 @@ class PasswordRequirements extends StatelessWidget {
     return Row(
       children: [
         Icon(
-          isMet ? Icons.check_circle_rounded : Icons.radio_button_unchecked_rounded,
+          isMet
+              ? Icons.check_circle_rounded
+              : Icons.radio_button_unchecked_rounded,
           size: 15,
           color: isMet ? AppColors.success : AppColors.textMuted,
         ),

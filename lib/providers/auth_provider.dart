@@ -20,7 +20,7 @@ class AuthProvider extends ChangeNotifier {
   bool _isRegisterConfirmPasswordVisible = false;
 
   AuthProvider({AuthServiceInterface? authService})
-      : _authService = authService ?? MockAuthService() {
+    : _authService = authService ?? MockAuthService() {
     loadSavedSession();
   }
 
@@ -36,7 +36,8 @@ class AuthProvider extends ChangeNotifier {
 
   bool get isLoginPasswordVisible => _isLoginPasswordVisible;
   bool get isRegisterPasswordVisible => _isRegisterPasswordVisible;
-  bool get isRegisterConfirmPasswordVisible => _isRegisterConfirmPasswordVisible;
+  bool get isRegisterConfirmPasswordVisible =>
+      _isRegisterConfirmPasswordVisible;
 
   /// Loads remembered login credentials or active preferences on start.
   Future<void> loadSavedSession() async {
@@ -142,7 +143,8 @@ class AuthProvider extends ChangeNotifier {
       }
     } catch (e) {
       _setLoading(false);
-      _errorMessage = 'Registration failed due to a network error. Please try again.';
+      _errorMessage =
+          'Registration failed due to a network error. Please try again.';
       notifyListeners();
       return false;
     }
@@ -154,7 +156,9 @@ class AuthProvider extends ChangeNotifier {
     _clearErrors();
 
     try {
-      final response = await _authService.forgotPassword(identifier: identifier);
+      final response = await _authService.forgotPassword(
+        identifier: identifier,
+      );
       _setLoading(false);
 
       if (response.isSuccess) {

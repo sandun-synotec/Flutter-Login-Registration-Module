@@ -17,17 +17,10 @@ class AuthResponse {
     required UserModel user,
     String message = 'Operation successful',
   }) {
-    return AuthResponse(
-      isSuccess: true,
-      message: message,
-      user: user,
-    );
+    return AuthResponse(isSuccess: true, message: message, user: user);
   }
 
-  factory AuthResponse.failure({
-    required String message,
-    String? errorCode,
-  }) {
+  factory AuthResponse.failure({required String message, String? errorCode}) {
     return AuthResponse(
       isSuccess: false,
       message: message,

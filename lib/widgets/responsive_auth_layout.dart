@@ -63,10 +63,7 @@ class ResponsiveAuthLayout extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               side: const BorderSide(color: AppColors.border),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(32),
-              child: child,
-            ),
+            child: Padding(padding: const EdgeInsets.all(32), child: child),
           ),
         ),
       ),
@@ -100,7 +97,11 @@ class ResponsiveAuthLayout extends StatelessWidget {
                     child: Container(
                       decoration: const BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [AppColors.primaryDark, AppColors.primary, AppColors.secondary],
+                          colors: [
+                            AppColors.primaryDark,
+                            AppColors.primary,
+                            AppColors.secondary,
+                          ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
@@ -169,7 +170,10 @@ class ResponsiveAuthLayout extends StatelessWidget {
                     flex: 6,
                     child: Container(
                       color: AppColors.surface,
-                      padding: const EdgeInsets.symmetric(horizontal: 44, vertical: 40),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 44,
+                        vertical: 40,
+                      ),
                       child: Center(
                         child: ConstrainedBox(
                           constraints: const BoxConstraints(

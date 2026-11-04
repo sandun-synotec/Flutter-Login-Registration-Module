@@ -34,10 +34,7 @@ class MockAuthService implements AuthServiceInterface {
       createdAt: DateTime.now().subtract(const Duration(days: 30)),
     );
 
-    final demoAccount = _MockAccount(
-      user: defaultUser,
-      password: 'Pass@1234',
-    );
+    final demoAccount = _MockAccount(user: defaultUser, password: 'Pass@1234');
 
     _accountsByEmail[defaultUser.email.toLowerCase()] = demoAccount;
     _accountsByPhone[_sanitizePhone(defaultUser.phone)] = demoAccount;
@@ -76,7 +73,8 @@ class MockAuthService implements AuthServiceInterface {
 
     if (account.password != password) {
       return AuthResponse.failure(
-        message: 'Incorrect password. Please verify your credentials and try again.',
+        message:
+            'Incorrect password. Please verify your credentials and try again.',
         errorCode: 'WRONG_PASSWORD',
       );
     }
@@ -168,7 +166,8 @@ class MockAuthService implements AuthServiceInterface {
 
     return AuthResponse.success(
       user: account.user,
-      message: 'Password reset link sent to $trimmed. Please check your messages.',
+      message:
+          'Password reset link sent to $trimmed. Please check your messages.',
     );
   }
 

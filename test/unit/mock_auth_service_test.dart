@@ -105,12 +105,16 @@ void main() {
 
   group('MockAuthService - forgotPassword', () {
     test('succeeds for existing user', () async {
-      final response = await authService.forgotPassword(identifier: 'user@example.com');
+      final response = await authService.forgotPassword(
+        identifier: 'user@example.com',
+      );
       expect(response.isSuccess, true);
     });
 
     test('fails for unknown identifier', () async {
-      final response = await authService.forgotPassword(identifier: 'unknown@example.com');
+      final response = await authService.forgotPassword(
+        identifier: 'unknown@example.com',
+      );
       expect(response.isSuccess, false);
       expect(response.errorCode, 'USER_NOT_FOUND');
     });

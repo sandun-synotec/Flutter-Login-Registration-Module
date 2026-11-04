@@ -55,7 +55,10 @@ void main() {
     });
 
     test('failed login sets errorMessage and does not authenticate', () async {
-      final success = await authProvider.login('user@example.com', 'WrongPass!');
+      final success = await authProvider.login(
+        'user@example.com',
+        'WrongPass!',
+      );
 
       expect(success, false);
       expect(authProvider.isAuthenticated, false);

@@ -21,9 +21,18 @@ void main() {
     });
 
     test('rejects invalid identifiers', () {
-      expect(Validators.validateIdentifier('invalid-input'), AppStrings.invalidIdentifier);
-      expect(Validators.validateIdentifier('1234'), AppStrings.invalidIdentifier);
-      expect(Validators.validateIdentifier('user@'), AppStrings.invalidIdentifier);
+      expect(
+        Validators.validateIdentifier('invalid-input'),
+        AppStrings.invalidIdentifier,
+      );
+      expect(
+        Validators.validateIdentifier('1234'),
+        AppStrings.invalidIdentifier,
+      );
+      expect(
+        Validators.validateIdentifier('user@'),
+        AppStrings.invalidIdentifier,
+      );
     });
   });
 
@@ -36,7 +45,10 @@ void main() {
     test('rejects invalid emails', () {
       expect(Validators.validateEmail(null), AppStrings.requiredField);
       expect(Validators.validateEmail('plainaddress'), AppStrings.invalidEmail);
-      expect(Validators.validateEmail('@missingusername.com'), AppStrings.invalidEmail);
+      expect(
+        Validators.validateEmail('@missingusername.com'),
+        AppStrings.invalidEmail,
+      );
       expect(Validators.validateEmail('user@domain'), AppStrings.invalidEmail);
     });
   });
@@ -101,22 +113,46 @@ void main() {
     test('rejects non-compliant passwords', () {
       expect(Validators.validatePassword(null), AppStrings.requiredField);
       expect(Validators.validatePassword('short'), AppStrings.passwordTooShort);
-      expect(Validators.validatePassword('alllowercase1!'), AppStrings.passwordNotStrong);
-      expect(Validators.validatePassword('ALLUPPERCASE1!'), AppStrings.passwordNotStrong);
-      expect(Validators.validatePassword('NoSpecialChar123'), AppStrings.passwordNotStrong);
-      expect(Validators.validatePassword('NoNumbersHere!'), AppStrings.passwordNotStrong);
+      expect(
+        Validators.validatePassword('alllowercase1!'),
+        AppStrings.passwordNotStrong,
+      );
+      expect(
+        Validators.validatePassword('ALLUPPERCASE1!'),
+        AppStrings.passwordNotStrong,
+      );
+      expect(
+        Validators.validatePassword('NoSpecialChar123'),
+        AppStrings.passwordNotStrong,
+      );
+      expect(
+        Validators.validatePassword('NoNumbersHere!'),
+        AppStrings.passwordNotStrong,
+      );
     });
   });
 
   group('Validators - validateConfirmPassword', () {
     test('returns null when passwords match', () {
-      expect(Validators.validateConfirmPassword('Pass@1234', 'Pass@1234'), isNull);
+      expect(
+        Validators.validateConfirmPassword('Pass@1234', 'Pass@1234'),
+        isNull,
+      );
     });
 
     test('returns error when mismatch or empty', () {
-      expect(Validators.validateConfirmPassword('Pass@1234', null), AppStrings.requiredField);
-      expect(Validators.validateConfirmPassword('Pass@1234', ''), AppStrings.requiredField);
-      expect(Validators.validateConfirmPassword('Pass@1234', 'Pass@12345'), AppStrings.passwordsDoNotMatch);
+      expect(
+        Validators.validateConfirmPassword('Pass@1234', null),
+        AppStrings.requiredField,
+      );
+      expect(
+        Validators.validateConfirmPassword('Pass@1234', ''),
+        AppStrings.requiredField,
+      );
+      expect(
+        Validators.validateConfirmPassword('Pass@1234', 'Pass@12345'),
+        AppStrings.passwordsDoNotMatch,
+      );
     });
   });
 }

@@ -1,5 +1,4 @@
 import '../models/auth_response.dart';
-import '../models/user_model.dart';
 
 abstract class AuthServiceInterface {
   /// Signs in a user using either their registered email address or mobile number.
@@ -18,9 +17,7 @@ abstract class AuthServiceInterface {
   });
 
   /// Triggers a password reset for the provided email or mobile number.
-  Future<AuthResponse> forgotPassword({
-    required String identifier,
-  });
+  Future<AuthResponse> forgotPassword({required String identifier});
 
   /// Ends the active user session and clears stored tokens.
   Future<void> logout();
