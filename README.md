@@ -6,6 +6,7 @@ A functional, secure, and responsive authentication module built with Flutter & 
 
 ## 🎥 Live Demonstration & Screen Recording
 
+- **Release APK**: [Download app-release.apk (44.9 MB) on Google Drive](https://drive.google.com/file/d/1ftPdkT6_OI_FFAmJ1U1Lzoe-BFebiCXT/view?usp=drivesdk)
 - **Google Drive Folder**: [Flutter-Login-Registration-Demo](https://drive.google.com/drive/folders/1kXZM0iNdsdBe81k1ElYlWnq_X88B8I6G)
 - **Direct Video Stream**: [demo_recording.mp4 on Google Drive](https://drive.google.com/file/d/1OYaj5_t2nDIaN6rctgSc2TlwbynuaApu/view?usp=drivesdk)
 - **Local Assets**: All video and screenshot files are stored in [`screenshots/`](./screenshots/).
